@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function person(firstname,lastname)
+        {
+            this.firstname = firstname;
+            this.lastname = lastname;
+            this.age = 15;
+        }
+
+        person.prototype.getfullname = function()
+        {
+            return this.firstname,this.lastname,this.age;
+        }
+
+        function student(firstname,lastname,garde,schoolname)
+        {
+            person.call(this,firstname,lastname);
+            this.grade = grade;
+            this.schoolname = schoolname;
+        }
+        student.prototype = new person;
+        student.constrator.prototype = new student;
+        var std = new student("john","doe","a","xyz");
+        console.log(std);
+    </script>
+</body>
+</html>
